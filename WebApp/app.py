@@ -173,15 +173,32 @@ hr{ border-color: var(--line-faint) !important; }
     letter-spacing:1px; padding:6px 14px; border-radius:20px; font-size:13px;
 }
             
-/* Custom Tooltip Slider biar gak nabrak biru */
-div[data-baseweb="tooltip"] {
-    background-color: var(--asphalt-700) !important;
-    color: var(--text-main) !important;
-    border: 1px solid var(--line-faint) !important;
+/* ---------- SLIDER OVERRIDE (ANTI AUTO-DARK BROWSER) ---------- */
+div[data-baseweb="slider"] {
+    margin-top: 10px !important;
 }
-.stSlider [role="slider"] {
-    background-color: var(--flag-red) !important;
-    box-shadow: 0 0 10px rgba(230,57,70,0.5) !important;
+
+/* Warna Angka Minimum, Maksimum, dan Angka Slider yang Dipilih */
+div[data-testid="stSliderTickBar"] + div,
+div[aria-valuenow] + div,
+div[data-baseweb="slider"] div {
+    color: #F2F1EC !important;
+    background-color: transparent !important;
+}
+
+/* Mengubah Kotak Tooltip Angka Slider Biar Gelap & Teks Putih */
+div[data-baseweb="tooltip"] > div {
+    background-color: #1C2128 !important;
+    color: #FFD400 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-weight: bold !important;
+}
+
+/* Mengubah Lingkaran Pegangan Slider (Thumb) Jadi Merah Balap */
+div[role="slider"] {
+    background-color: #E63946 !important;
+    border: 2px solid #FFFFFF !important;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6) !important;
 }
 </style>
 """, unsafe_allow_html=True)
