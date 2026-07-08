@@ -172,6 +172,17 @@ hr{ border-color: var(--line-faint) !important; }
     color:#8FC1FF; font-family:'Rajdhani', sans-serif; font-weight:600;
     letter-spacing:1px; padding:6px 14px; border-radius:20px; font-size:13px;
 }
+            
+/* Custom Tooltip Slider biar gak nabrak biru */
+div[data-baseweb="tooltip"] {
+    background-color: var(--asphalt-700) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--line-faint) !important;
+}
+.stSlider [role="slider"] {
+    background-color: var(--flag-red) !important;
+    box-shadow: 0 0 10px rgba(230,57,70,0.5) !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -241,12 +252,12 @@ if models is not None and kamus_sirkuit:
     model_front, model_rear, feature_encoders, target_encoder, feature_columns = models
 
     # SIDEBAR INFO
+    # SIDEBAR INFO
     with st.sidebar:
         st.markdown('<div class="plaque blue">Tentang Model</div>', unsafe_allow_html=True)
         st.markdown("""
         **MotoTyre.AI** memprediksi rekomendasi kompon ban depan & belakang
-        menggunakan **Random Forest**, dilatih dari data historis balapan MotoGP.
-        """)
+        menggunakan **XGBoost**, dilatih dari data historis balapan MotoGP.""")
         st.markdown(
             '<div class="accuracy-badge">⚙️ Akurasi Model: 85–88%</div>',
             unsafe_allow_html=True
